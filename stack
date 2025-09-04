@@ -1,0 +1,50 @@
+public class stackLearn {
+	int[] stack;
+	int capacity;
+	int top;
+	
+	public stackLearn(int size) {
+		stack	= new int[size];
+		size=capacity;
+		top=-1;
+	}
+	void push(int value) {
+		if(top==capacity-1) {
+			System.out.println("The Stack is Full.");
+		}
+		else {
+			System.out.println("The element "+value+" is inserted in the stack.");
+			stack[++top]=value;
+		}
+	}
+	void pop() {
+		if(top==-1) {
+			System.out.println("The Stack is empty.");
+		}
+		else {
+			System.out.println("The Element is popped out is "+stack[top--]);
+		}
+	}
+	void display() {
+		System.out.println("The Elements present in the Stack are-: ");
+		for(int val: stack) {
+			System.out.println(val+" ");
+		}
+	}
+	void isEmpty() {
+		if(top==-1) {
+		System.out.println("The stack is Empty.");
+		}
+		else{
+			System.out.println("The Stack is Full.");
+		}
+	}
+	void peek() {
+		System.out.println("The Top element present at the top of the stack ");
+		
+	}
+	public static void main(String[] args) {
+		System.out.println("I am executing a DSA stack program here in eclipse IDE.");
+	}
+}
+// this code will have the functions made in the program.
