@@ -1,50 +1,83 @@
-public class stackLearn {
-	int[] stack;
+package learnintials;
+
+public class stackLearnTwo {
+	
+	int[] stack2;
 	int capacity;
 	int top;
 	
-	public stackLearn(int size) {
-		stack	= new int[size];
-		size=capacity;
+	
+	public stackLearnTwo(int size){
+		stack2= new int[size];
+		capacity=size;
 		top=-1;
 	}
+	
 	void push(int value) {
 		if(top==capacity-1) {
-			System.out.println("The Stack is Full.");
+			System.out.println("The Stack is full.");
 		}
 		else {
-			System.out.println("The element "+value+" is inserted in the stack.");
-			stack[++top]=value;
-		}
+			stack2[++top]=value;
+			System.out.println("The Value is inserted in the stack.");
+		}		
 	}
+	
 	void pop() {
 		if(top==-1) {
-			System.out.println("The Stack is empty.");
+			System.out.println("The Stack is Empty.");
 		}
 		else {
-			System.out.println("The Element is popped out is "+stack[top--]);
-		}
+			System.out.println("The value is popped.");
+			top--;
+		}		
 	}
-	void display() {
-		System.out.println("The Elements present in the Stack are-: ");
-		for(int val: stack) {
-			System.out.println(val+" ");
-		}
-	}
+	
 	void isEmpty() {
 		if(top==-1) {
-		System.out.println("The stack is Empty.");
+			System.out.println("The stack is empty.");
 		}
-		else{
-			System.out.println("The Stack is Full.");
-		}
+		else {
+			System.out.println("The stack is not empty.");
+		}		
 	}
+	
 	void peek() {
-		System.out.println("The Top element present at the top of the stack ");
+		System.out.println("The top element in the stack is-: "+ stack2[top]);		
+	}
+	
+	void display() {
+		if(top==-1) {
+			System.out.println("The Stack is Empty.");
+		}
+		else {
+			for(int num: stack2) {
+				System.out.println(" "+num);
+			}
+		}		
+	}
+	
+	public static void main(String[] args) {
+		System.out.println("The program of DSA is of Stack initialization and elements excecution with functions as well.");
+		
+		stackLearnTwo s = new stackLearnTwo(5);
+
+        
+        s.push(10);
+        s.push(20);
+        s.push(30);
+        s.pop();
+
+        s.pop();
+        s.display();
+
+        s.peek();
+
+        s.push(40);
+        s.push(50);
+        s.display();
 		
 	}
-	public static void main(String[] args) {
-		System.out.println("I am executing a DSA stack program here in eclipse IDE.");
-	}
+
 }
-// this code will have the functions made in the program.
+
